@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Health Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Tailwind for utilities if needed, but using custom CSS as primary -->
+</head>
+<body>
+    <div class="main-container">
+        <header class="chat-header">
+            <div class="logo-area">
+                <div class="logo-icon">🩺</div>
+                <div class="header-text">
+                    <h1>MediGate AI</h1>
+                    <span class="status-indicator">Online</span>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+        </header>
+
+        <main class="chat-window" id="chat-window">
+            <!-- Messages will be injected here -->
+            <div class="message bot-message">
+                <div class="avatar">🤖</div>
+                <div class="content">
+                    <p>Hello! I am your AI Health Assistant. I can help predict potential conditions based on your symptoms.</p>
+                    <button class="start-btn" onclick="startChat()">Start Diagnosis</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="chat-input-area">
+            <div class="input-wrapper">
+                <input type="text" id="user-input" placeholder="Type your answer..." autocomplete="off">
+                <button id="send-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
